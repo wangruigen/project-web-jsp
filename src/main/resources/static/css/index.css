@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    margin: 10px;
+    background-color: azure;
+}
+
+.indexDiv {
+    width: 500px;
+    height: 300px;
+    border: bisque solid 1px;
+    margin: auto;
+    background-color: paleGoldenrod;
+    box-shadow: 15px 15px 5px #888888;
+    border-radius: 40px
+}

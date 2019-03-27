@@ -1,0 +1,30 @@
+#开发环境配置
+#数据库H2配置
+spring:
+  h2:
+    console:
+      path: /h2-console #h2 web控制台，默认
+      enabled: true #开启控制台,默认fasle
+      settings:
+        web-allow-others: true #允许远程访问 默认false
+        trace: false #是否启用跟踪日志输出。默认false
+  datasource:
+    #url: jdbc:h2:mem:testdb #mem表示的是内存数据库，数据库名称叫testdb
+    url: jdbc:h2:c:/H2/mydb #表示在c盘H2目录下创建mydb数据库
+    username: sa
+    password:
+    druid:
+      #连接池配置
+      #初始化连接数
+      initial-size: 5
+      #最大连接数
+      max-active: 10
+      #最小连接数
+      min-idle: 3
+      #获取连接等待时长（毫秒）
+      max-wait: 6000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接（毫秒）
+      time-between-eviction-runs-millis: 60000
+      #配置一个连接在池中最小生存的时间（毫秒）
+      min-evictable-idle-time-millis: 30000
+    platform: h2

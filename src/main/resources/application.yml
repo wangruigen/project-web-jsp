@@ -1,0 +1,29 @@
+#server
+server:
+  port: 9999
+  servlet:
+    context-path: /project-web
+
+#spring的配置
+spring:
+  #配置文件配置
+  profiles:
+    active: dev #使用开发环境的配置 application-dev.yml
+  #springmvc配置
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  resources:
+    #静态资源配置（代码中的默认值和优先级如下）
+    static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, classpath:/public/
+  thymeleaf:
+    #关闭默认的thymeleaf模版引擎
+    enabled: false
+  devtools:
+    restart:
+      exclude: datasource/**
+#log
+logging:
+  config: classpath:logback-spring.xml
+  path: D:/${server.servlet.context-path}/ #统一日志路径及跟目录
